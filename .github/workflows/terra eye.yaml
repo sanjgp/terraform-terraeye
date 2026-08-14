@@ -46,4 +46,5 @@ jobs:
           # plan-file: terraform/tfplan.json
           fail-on: critical,high
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          # OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
