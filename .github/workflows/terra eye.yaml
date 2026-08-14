@@ -39,7 +39,7 @@ jobs:
       #     terraform show -json tfplan > tfplan.json
 
       - name: TerraEye
-        uses: sanchetanparmar/terraeye@v0.1.0
+        uses: sanchetanparmar/terraeye@0.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           # config-path: terraeye.yml
