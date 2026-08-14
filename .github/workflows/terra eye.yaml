@@ -48,3 +48,8 @@ jobs:
         env:
           # OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          
+      - run: |
+         if [ -n "$ANTHROPIC_API_KEY" ]; then echo "Anthropic key is set"; else echo "Anthropic key MISSING"; fi
+         env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
