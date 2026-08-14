@@ -1,0 +1,44 @@
+# TerraEye config (NOT a GitHub Actions workflow — no `on:` / `jobs:` needed)
+# yaml-language-server: $schema=../schemas/terraeye.schema.json
+#
+# Optional. Defaults are built into the Action if this file is missing.
+# https://github.com/sanchetanparmar/terraeye
+
+fail_on:
+  - critical
+  - high
+
+paths:
+  - "**/*.tf"
+  - "**/*.tfvars"
+  - "**/terraform/**"
+
+ignore_paths:
+  - "**/.terraform/**"
+  - "**/vendor/**"
+
+inline_comments:
+  enabled: true
+  min_severity: high
+
+ai:
+  enabled: true
+  provider: anthropic # openai | anthropic | none
+  model: Haiku4.5
+
+# cost:
+#   enabled: true
+#   currency: USD
+
+# scanners:
+#   builtin: true
+#   checkov: false
+#   tflint: false
+#   trivy: false
+
+comment:
+  marker: "<!-- terraeye-review -->"
+  collapse_details: true
+
+check:
+  name: Terraform AI Review
